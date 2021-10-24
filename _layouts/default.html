@@ -9,7 +9,7 @@
 <title>{{ page.title }} | {{site.name}}</title>
 
 {% seo %}
-    
+
 <link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
 
 <link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
@@ -18,6 +18,7 @@
 
 </head>
 
+{% comment %}
 {% if jekyll.environment == 'production' %}
 <!-- change your GA id in _config.yml -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{site.google_analytics}}"></script>
@@ -29,33 +30,36 @@
   gtag('config', '{{site.google_analytics}}');
 </script>
 {% endif %}
+{% endcomment %}
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
 <body>
 	<!-- defer loading of font and font awesome -->
 	<noscript id="deferred-styles">
 		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	</noscript>
 
 <!-- Begin Sidebar Navigation
 ================================================== -->
 
-<div class="sidebar">    
-</div>   
+<div class="sidebar">
+</div>
 <div class="nav-icon">
     <div class="hamburger-bar"></div>
 </div>
 <div id="blackover-nav" class="blackover"></div>
 <nav id="menu">
     <ul>
-        <h3>Navigation</h3>
-        <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/about">About</a></li>
+        <h3>Василь Мосійчук</h3>
+        <li><a href="{{ site.baseurl }}/">Голона</a></li>
+        <li><a href="{{ site.baseurl }}/about">Про подорож</a></li>
+        {% comment %}
         <li><a href="{{ site.baseurl }}/authors">Contributors <span class="badge badge-primary">new</span></a></li>
-        <li><a target="_blank" href="https://bootstrapstarter.com/jekyll-theme-memoirs/">Get Memoirs</a></li>      
-        <li><a href="{{ site.baseurl }}/contact">Contact</a></li>       
-    </ul>   
+        <li><a target="_blank" href="https://bootstrapstarter.com/jekyll-theme-memoirs/">Get Memoirs</a></li>
+        {% endcomment %}
+        <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+    </ul>
 </nav>
 
 {% include search-lunr.html %}
@@ -70,11 +74,11 @@
 
     <!-- Site Logo/Name
     ================================================== -->
-   
+
     <a class="navbar-brand" href="{{ site.baseurl }}/">
         <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>  
-   
+    </a>
+
 
     <!-- Site Tag
     ================================================== -->
@@ -90,6 +94,7 @@
         {{ content }}
     </div>
 
+{% comment %}
     {% if site.mailchimp-list %}
     <!-- Newsletter
     ================================================== -->
@@ -103,7 +108,8 @@
         </form>
     </div>
     {% endif %}
-    
+{% endcomment %}
+
 </div>
 
 <!-- Begin Footer
@@ -112,10 +118,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12 text-center text-lg-left">
-                Copyright © {{ site.time | date: "%Y" }} {{ site.name }} 
+                Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
             </div>
-            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net/memoirs-free-jekyll-theme/">Memoirs Jekyll Theme</a> by WowThemes.net
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">
+                <a target="_blank" href="#">Donate</a>
             </div>
         </div>
     </div>
